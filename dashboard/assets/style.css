@@ -1,0 +1,15 @@
+/* 
+  Style.css file is linked in the header template, therefore
+  it is applied to every page of our application.
+  Write some style to begin.
+*/
+
+hr.joined {
+    border: 1px solid rgb(0, 243, 0);
+    border-radius: 5px;
+}
+
+hr.nonjoined {
+    border: 1px solid rgb(255, 1, 1);
+    border-radius: 5px;
+}
