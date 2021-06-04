@@ -13,3 +13,48 @@ hr.nonjoined {
     border: 1px solid rgb(255, 1, 1);
     border-radius: 5px;
 }
+
+body{
+  background: url("https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif");
+  background-repeat: repeat-y;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.dashy_header {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 2rem;
+	font-weight:  100;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #f35626;
+	background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 10s infinite linear;
+}
+
+.guild_header {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 2rem;
+	font-weight:  100;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #f35626;
+	background-image: -webkit-linear-gradient(92deg, #f0f326, #3afe4a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 10s infinite linear;
+}
+
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}

@@ -7,13 +7,13 @@
         <%= alert %>
       </div>
     <% } %>
-    <h1 class="text-white"><%= guild.name %></h1>
+    <h1 class="guild_header"><%= guild.name %></h1>
     <hr>
     <form method="POST">
-      <p class="h5 text-white" style="margin-bottom: 0.5rem; margin-top: 10px;">Prefix:</p>
-      <p class="disabled text-white">The prefix is used to run the bot commands. Example: <u><b><%= settings.prefix %>ping</b></u></p>
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;color:aquamarine">Prefix:</p>
+      <p class="disabled" style="color:rgb(234, 0, 255)">The prefix is used to run the bot commands. Example: <u><b><%= settings.prefix %>ping</b></u></p>
       <input type="text" class="form-control" name="prefix" value="<%= settings.prefix %>" placeholder="Your prefix.">
-      <br><button type="submit" class="btn btn-secondary text-black">Save Settings</button>
+      <br><button type="submit" class="btn btn-success text-white">Save Settings</button>
     </form>
   </div>
 </div>
