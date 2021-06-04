@@ -171,8 +171,9 @@ module.exports = async (client) => {
   });
 
   // Dashboard endpoint.
-  app.get("/dashboard", checkAuth, (req, res) => {
-    renderTemplate(res, req, "dashboard.ejs", { perms: Discord.Permissions });
+  app.get("/dashboard", checkAuth, async (req, res) => {
+    var storedSettings = await GuildSettings.findOne({ });
+    renderTemplate(res, req, "dashboard.ejs", { perms: Discord.Permissions, settings: storedSettings, alert: null });
   });
 
   // Settings endpoint.
@@ -223,6 +224,7 @@ module.exports = async (client) => {
       
         // We set the prefix of the server settings to the one that was sent in request from the form.
         storedSettings.prefix = req.body.prefix;
+        storedSettings.gdesc = req.body.gdesc;
         // We save the settings.
         await storedSettings.save().catch(() => {});
 

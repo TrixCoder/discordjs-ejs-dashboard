@@ -4,6 +4,7 @@ const { Schema, model } = require("mongoose");
 // We declare new schema.
 const guildSettingSchema = new Schema({
   gid: { type: String },
+  gdesc: { type: String, default: "Server description is not set yet" },
   prefix: { type: String, default: "!" }
 });
 

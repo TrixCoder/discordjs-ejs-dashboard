@@ -11,8 +11,11 @@
     <div class="card bg-dark" style="max-width: 18rem; margin: 2rem; min-width: 10rem;width:10rem;">
     <%- guild.icon ? `<img src="https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}" class="card-img-top" style="max-width: 18rem;min-width: 10em;width:10em;">` : `<img src="https://cdn.icon-icons.com/icons2/1476/PNG/512/discord_101785.png" class="card-img-top" style="max-width: 18rem;min-width: 10em;width:10em;">` %>
       <div class="card-body">
-        <h5 class="card-title text-white"><%= guild.name %></h5>
-          <a href="/dashboard/<%- guild.id %>" class="btn btn-success text-white">Edit Settings</a>
+        <h5 class="card-title text-white" style="font-size:15px;"><%= guild.name %></h5>
+        <p class="card-text" style="color:aquamarine;font-size:12px;"><%= settings.gdesc %></p>
+      </div>
+      <div class="card-footer">
+        <a href="/dashboard/<%- guild.id %>" class="btn btn-success text-white">Edit Settings</a>
       </div>
     </div>
   <%
@@ -33,7 +36,9 @@
       <%- guild.icon ? `<img src="https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}" class="card-img-top" style="max-width: 18rem;width:10rem;">` : `<img src="https://cdn.icon-icons.com/icons2/1476/PNG/512/discord_101785.png" class="card-img-top" style="max-width:18rem;width:10rem;">` %>
         <div class="card-body">
           <h5 class="card-title text-white"><%= guild.name %></h5>
-            <a href="<%= `https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=8&guild_id=${guild.id}&response_type=code&redirect_uri=${encodeURIComponent(`${bot.config.domain}${bot.config.port == 80 ? "" : `:${bot.config.port}`}/callback`)}`  %>" class="btn btn-primary text-white">Invite Bot</a>
+        </div>
+        <div class="card-footer">
+          <a href="<%= `https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=8&guild_id=${guild.id}&response_type=code&redirect_uri=${encodeURIComponent(`${bot.config.domain}${bot.config.port == 80 ? "" : `:${bot.config.port}`}/callback`)}`  %>" class="btn btn-primary text-white">Invite Bot</a>
         </div>
       </div>
     <%
