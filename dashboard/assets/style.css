@@ -14,13 +14,12 @@ hr.nonjoined {
     border-radius: 5px;
 }
 
+
 body{
-  background: url("https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif");
-  background-repeat: repeat-y;  
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #111825;
+  border: solid #222 1px;
+  border-radius: 5px;
+  position: relative;
 }
 
 .dashy_header {

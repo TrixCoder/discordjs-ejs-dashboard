@@ -1,11 +1,10 @@
-<%- include("partials/header", { bot, user, path, title: "Home" }) %>
-
+<%- include("partials/header", { bot, user, path, title: `Home | ${bot.user.username}` }) %>
     <div class="container-sm center" style="margin-top: 25px;">
         <div class="d-grid gap-2 col-6 mx-auto">
-            <h2 class="text-white cen">Welcome to DashyBoard!</h2>
-            <a class="btn btn-secondary text-blue" href="/dashboard">Dashboard</a>
-            <a class="btn btn-warning" href="https://discord.gg/vNbq5j2eqA">Discord Server</a>
+            <h2 class="text-primary cen">Welcome to DashyBoard!</h2>
+            <a class="btn btn-secondary btn-success" href="/dashboard">Dashboard</a>
+            <a class="btn btn-primary" href="https://discord.gg/vNbq5j2eqA">Discord Server</a>
         </div>
     </div>
 
-    <%- include("partials/footer") %>
+<%- include("partials/footer") %>

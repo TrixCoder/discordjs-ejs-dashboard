@@ -9,17 +9,21 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand dashy_header" href="<%= `https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot` %>"</a>DashyBoard</a>
+      <a class="navbar-brand dashy_header" href="<%= `https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot` %>">
+        
+        <%- bot.avatar ? `<img src="https://cdn.discordapp.com/avatars/${bot.user.id}/${bot.user.avatar}" style="max-width: 2rem;max-height:2rem;">` : `<img src="https://cdn.icon-icons.com/icons2/1476/PNG/512/discord_101785.png" style="max-width: 2rem;max-height:2rem;">` %>
+        <%= bot.user.username %>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <%- title==`Home | ${bot.user.username}` ? `<a class="nav-link active" aria-current="page" href="/">Home</a>`: `<a class="nav-link" href="/">Home</a>` %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
+            <%- title==`Select server | ${bot.user.username}` ? `<a class="nav-link active" aria-current="page" href="/dashboard">Select Server</a>`: `<a class="nav-link" href="/dashboard">Select Server</a>` %>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -30,7 +34,9 @@
                 <%= user.username %>#<%= user.discriminator %>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                <li><a class="dropdown-item" href="/">Home</a></li>
+                <li><a class="dropdown-item" href="/dashboard">Select Server</a></li>
+                <li><a class="dropdown-item" href="https://discord.gg/vNbq5j2eqA">Support Server</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/logout">Logout</a></li>
               </ul>
