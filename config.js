@@ -4,7 +4,7 @@ module.exports = {
   "id": "848415803187003402", // https://discordapp.com/developers/applications/ID/information
   "clientSecret": "EjAbl6JzBWu6nUfm6H7kVF75YDkPC5ZJ", // https://discordapp.com/developers/applications/ID/information
   "domain": "http://localhost",
-  "port": 3002,
+  "port": 8080,
   "usingCustomDomain": false
 };
 

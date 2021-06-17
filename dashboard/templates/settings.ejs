@@ -1,24 +1,55 @@
 <%- include("partials/header", { bot, user, path, title: `Settings | ${guild.name}` }) %>
 
-<div class="container-sm center" style="margin-top: 30px;">
-  <div class="d-grid gap-2 col-4 mx-auto">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <%- include ("partials/menustyle.ejs") %>
+</head>
+<body>
+<div class="container">
+  <div class="container-sm center" style="margin-top: 30px;">
     <% if (alert) { %>
       <div class="alert alert-success" role="alert">
         <%= alert %>
       </div>
     <% } %>
     <h1 class="guild_header"><%= guild.name %></h1>
-    <hr>
-    <form method="POST">
-      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;color:aquamarine">Prefix:</p>
-      <p class="disabled" style="color:rgb(234, 0, 255)">The prefix is used to run the bot commands. Example: <u><b><%= settings.prefix %>ping</b></u></p>
-      <input type="text" class="form-control" name="prefix" value="<%= settings.prefix %>" placeholder="Your prefix.">
-      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;color:aquamarine">Description:</p>
-      <p class="disabled" style="color:rgb(234, 0, 255)">In description section we write description of our server</p>
-      <textarea class="form-control input-xxlarge" name="gdesc" placeholder="Your Server Description."><%= settings.gdesc %></textarea>
-      <br><button type="submit" class="btn btn-success text-white">Save Settings</button>
-    </form>
+    <hr class="joined">
+    <div class="row">
+      <div class="col-sm-4 mycontent-left">
+        <h2 class="text-white">Configruation types</h2>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item active">
+            <a data-toggle="pill" class="nav-link active" href="#basic">Basic</a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" class="nav-link" href="#moderation">Moderation</a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" class="nav-link" href="#autolog">Autolog</a>
+          </li>
+        </ul>
+        <hr class="d-sm-none">
+      </div>
+      <div class="col-sm-8 mycontent-right">
+        <div class="tab-content">
+          <div id="basic" class="tab-pane fade in active">
+            <h3 class="text-white">Basic Configruations</h3>
+              <%- include ("commands/basic.ejs") %>
+          </div>
+          <div id="moderation" class="tab-pane fade">
+            <h3>Menu 1</h3>
+          </div>
+          <div id="autolog" class="tab-pane fade">
+            <h3>Menu 2</h3>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
+</body>
 <%- include("partials/footer") %>

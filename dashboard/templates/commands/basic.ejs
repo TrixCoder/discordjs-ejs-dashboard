@@ -1,0 +1,10 @@
+<form method="POST">
+    <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;color:aquamarine">Prefix:</p>
+    <p class="disabled" style="color:rgb(234, 0, 255)">The prefix is used to run the bot commands. Example: <u><b><%= settings.prefix %>ping</b></u></p>
+    <input type="text" class="form-control" name="prefix" value="<%= settings.prefix %>" placeholder="Your prefix.">
+    <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;color:aquamarine">Description:</p>
+    <p class="disabled" style="color:rgb(234, 0, 255)">In description section we write description of our server</p>
+    <textarea class="form-control input-xxlarge" name="gdesc" placeholder="Your Server Description."><%= settings.gdesc %></textarea>
+    <br><button type="submit" class="btn btn-success text-white">Save Settings</button>
+  </form>
+  
